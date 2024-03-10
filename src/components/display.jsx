@@ -11,59 +11,46 @@ const Display = () => {
   ]);
 
   const getResult = (teamA, teamB) => {
-    let victory = 40;
     let draw = 30;
     let lose = 30;
 
     let teamADecision = "";
-    let teamBDecision = "";
 
     const probability = Math.floor(Math.random() * 100);
 
     let diference = teamA >= teamB ? teamA - teamB : teamB - teamA;
 
     if (teamA > teamB && diference === 10) {
-      victory = 50;
       draw = 25;
       lose = 25;
     } else if (teamA > teamB && diference === 20) {
-      victory = 60;
       draw = 20;
       lose = 20;
     } else if (teamA > teamB && diference === 30) {
-      victory = 70;
       draw = 15;
       lose = 15;
     } else if (teamA > teamB && diference === 40) {
-      victory = 80;
       draw = 10;
       lose = 10;
     } else if (teamA > teamB && diference === 50) {
-      victory = 90;
       draw = 5;
       lose = 5;
     } else if (teamA < teamB && diference === 10) {
-      victory = 35;
       draw = 25;
       lose = 40;
     } else if (teamA < teamB && diference === 20) {
-      victory = 30;
       draw = 20;
       lose = 50;
     } else if (teamA < teamB && diference === 30) {
-      victory = 20;
       draw = 20;
       lose = 60;
     } else if (teamA < teamB && diference === 40) {
-      victory = 15;
       draw = 15;
       lose = 70;
     } else if (teamA < teamB && diference === 50) {
-      victory = 10;
       draw = 10;
       lose = 80;
     } else {
-      victory = 40;
       draw = 30;
       lose = 30;
     }
@@ -72,13 +59,10 @@ const Display = () => {
 
     if (probability > winDecision) {
       teamADecision = "win";
-      teamBDecision = "lose";
     } else if (probability < lose) {
       teamADecision = "lose";
-      teamBDecision = "win";
     } else {
       teamADecision = "draw";
-      teamBDecision = "draw";
     }
 
     let score1 =
